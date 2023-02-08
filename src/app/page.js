@@ -6,11 +6,11 @@ const API_KEY = process.env.API_KEY
 export default async function Home({searchParams}) {
 
   const genre = searchParams.genre || "fetchTrending"
-  console.log(searchParams.id)
+  
 
   const res = await fetch(`https://api.themoviedb.org/3/${genre==="fetchTopRated"?"movie/top_rated":"trending/all/week"}?api_key=${API_KEY}`,{next:{revalidate:100000}});
   const data =await res.json();
-  const result= data.results;
+  const result= data?.results;
   return (
     <main>
   <Results result={result}/>    </main>
