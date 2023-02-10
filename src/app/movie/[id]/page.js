@@ -3,10 +3,8 @@ import Image from "next/image";
 async function page({params}) {
 
     const movieId =params.id;
-    const res =  await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`)
+    const res =  await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=5dc2347f57ee0146e493090dcf36ef21`)
     const movie = await res.json()
-    // console.log(params.id)
-    // console.log(movie)
   return (
     <div className="w-full">
      <div className="p-4 md:pt-8 flex flex-col md:flex-row items-center content-center max-w-6xl mx-auto md:space-x-6">
